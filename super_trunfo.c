@@ -14,8 +14,8 @@ int main(){  // Função principal do programa
     
     // ---------- Declaração das variáveis da Carta 01 ----------
     char estado1;            // Armazena a letra do estado (A-H)
-    char cod1[4];            // Código da carta (ex: A01) → precisa de 4 posições (3 caracteres + '\0')
-    char cidade1[20];        // Nome da cidade (até 19 caracteres + '\0')
+    char cod1[3];            // Código da carta (ex: A01) → precisa de 3 posições
+    char cidade1[20];        // Nome da cidade (20 caracteres)
     int populacao1;          // População da cidade
     float area1;             // Área da cidade em km²
     float pib1;              // PIB da cidade em bilhões de reais
