@@ -14,12 +14,14 @@ int main(){  // Função principal do programa
     
     // ---------- Declaração das variáveis da Carta 01 ----------
     char estado1;            // Armazena a letra do estado (A-H)
-    char cod1[3];            // Código da carta (ex: A01) → precisa de 3 posições
+    char cod1[4];            // Código da carta (ex: A01) → precisa de 3 posições
     char cidade1[20];        // Nome da cidade (20 caracteres)
     int populacao1;          // População da cidade
     float area1;             // Área da cidade em km²
     float pib1;              // PIB da cidade em bilhões de reais
     int pontos_t1;           // Número de pontos turísticos da cidade
+    float densidadepopulacional1; // Densidade populacional
+    float PIBpercapita1; // Pib per capita
 
     // ---------- Declaração das variáveis da Carta 02 ----------
     char estado2;            // Armazena a letra do estado (A-H)
@@ -29,6 +31,9 @@ int main(){  // Função principal do programa
     float area2;             // Área em km²
     float pib2;              // PIB em bilhões de reais
     int pontos_t2;           // Número de pontos turísticos
+    float densidadepopulacional2; // Densidade populacional
+    float PIBpercapita2; // Pib per capita
+
 
     // ---------- Entrada de dados da primeira carta ----------
     printf("Vamos Cadastrar a Primeira Carta \n\n");  // Mensagem inicial
@@ -63,6 +68,12 @@ int main(){  // Função principal do programa
     printf("Área: %.2f km²\n", area1);              // Mostra a área com 2 casas decimais
     printf("PIB: %.2f bilhões de reais\n", pib1);   // Mostra o PIB com 2 casas decimais
     printf("Número de Pontos Turísticos: %d\n", pontos_t1); // Mostra pontos turísticos
+    
+    densidadepopulacional1 = populacao1/area1;
+    printf("Densidade Populacional %.2f hab/km² \n", densidadepopulacional1);
+    
+    PIBpercapita1 = (pib1*1e9)/populacao1;
+    printf("PIB per Capita: %.2f reais\n", PIBpercapita1);
 
     // ---------- Entrada de dados da segunda carta ----------
     printf("\nExcelente, Vamos Cadastrar a Segunda Carta\n\n");  
@@ -97,6 +108,12 @@ int main(){  // Função principal do programa
     printf("Área: %.2f km²\n", area2);              // Mostra a área
     printf("PIB: %.2f bilhões de reais\n", pib2);   // Mostra o PIB
     printf("Número de Pontos Turísticos: %d\n", pontos_t2); // Mostra pontos turísticos
+    
+    densidadepopulacional2 = populacao2/area2; 
+    printf("Densidade Populacional %.2f hab/km² \n", densidadepopulacional2);
+
+    PIBpercapita2 = (pib2*1000000000)/populacao2;
+    printf("PIB per Capita: %.2f reais\n ",PIBpercapita2);
 
     // ---------- Mensagem final ----------
     printf("\nCartas Cadastradas Com Sucesso!\n\n");  
