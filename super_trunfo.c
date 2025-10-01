@@ -1,6 +1,8 @@
 #include <stdio.h>  // Biblioteca padrão de entrada e saída (printf, scanf, etc.)
+#include <string.h>
 
 int main(){  // Função principal do programa
+int numeroatributo;
     
     // ---------- Declaração das variáveis da Carta 01 ----------
     char estado1;            // Armazena a letra do estado (A-H)
@@ -140,7 +142,22 @@ int main(){  // Função principal do programa
     printf("PIB per Capita: Carta 1 venceu(%d)\n",resultado_pibpercapita);
     printf("Super Poder Carta 1 venceu(%d)\n", resultado_superpoder);
 
-// Exibido o resultado final - População
+// Menu Interativo:
+
+//Menu para escolha do atributo
+    printf("\n");
+    printf("Escolha o atributo para comparação:\n");
+    printf("1 - População\n");
+    printf("2 - Área\n");
+    printf("3 - PIB\n");
+    printf("4 - Número de pontos turísticos\n");
+    printf("5 - Densidade demográfica\n");
+    printf("Opção escolhida: ");
+    scanf("%d", &numeroatributo);
+    printf("\n");
+switch(numeroatributo)
+{
+    case 1:
     printf("\n=== Comparação de Cartas ===\n");
     printf("Atributo: População\n");
     printf("Carta 1 - %s: %d\n", cidade1, populacao1);
@@ -152,7 +169,10 @@ int main(){  // Função principal do programa
     }else {
         printf("Ambas populações estão empatadas\n");}
     
+    break;
+
     // Exibido o resultado final - Área
+  case 2:
     printf("\n=== Comparação de Cartas ===\n");
     printf("Atributo: Área\n");
     printf("Carta 1 - %s: %.2f\n", cidade1, area1);
@@ -163,8 +183,10 @@ int main(){  // Função principal do programa
     } else {
         printf("Ambas áreas estão empatadas\n");
     }
+    break;
 
 // Exibido o resultado final - PIB
+case 3:
     printf("\n=== Comparação de Cartas ===\n");
     printf("Atributo: PIB\n");
     printf("Carta 1 - %s: %.2f\n",cidade1, pib1);
@@ -176,8 +198,10 @@ int main(){  // Função principal do programa
     } else{
         printf("Ambas as cidades estão empatadas em PIB\n");
     }
+    break;
     
     // Exibindo o resultado final - Atributo: Pontos Turísticos para avaliar na linha de printf
+    case 4:
     printf("\n=== Comparação de Cartas ===\n");
     printf("Atributo: Pontos Turísticos\n");
     printf("Carta 1 - %s: %d\n",cidade1,pontos_t1);
@@ -190,8 +214,10 @@ int main(){  // Função principal do programa
     else {
         printf("Ambas as cidades estão empatadas em Pontos turísticos\n");
     }  
-    
+    break;
+
 //Exibido o resultado final - Densidade Populacional
+case 5:
     printf("\n=== Comparação de Cartas ===\n");
     printf("Atributo: Densidade Populacional\n"); // A carta com o menor valor vence.
     printf("Carta 1 - %s: %.2f\n",cidade1,densidadepopulacional1);
@@ -203,9 +229,10 @@ int main(){  // Função principal do programa
         printf("Densidade Populacional Carta 2 venceu(%.2f)\n",densidadepopulacional2);
     } else{ 
         printf("Ambas as cidades estão empatadas em Densidade Populacional\n");
-    }
+    }break;
 
 // Exibido o resultado final - Pib per capita
+case 6:
     printf("\n=== Comparação de Cartas ===\n");
     printf("Atributo: PIB per capita\n");
     printf("Carta 1 - %s: %.2f\n",cidade1, PIBpercapita1);
@@ -217,7 +244,11 @@ int main(){  // Função principal do programa
     }
     else{printf("Ambas as cidades estão empatadas em PIB per capita\n");
     }
+    break;
 
-    printf("\n############### PROGRAMA FINALIZADO!\n\n");
+    default:
+    printf("OpÇão Invalida\n");
+
+   printf("\n############### PROGRAMA FINALIZADO!\n\n");
     }
 
